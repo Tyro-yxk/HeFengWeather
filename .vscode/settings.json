@@ -1,0 +1,17 @@
+{
+    "arduino.path": "D:\\Program Files (x86)\\Arduino",
+    "arduino.commandPath": "arduino_debug.exe",
+    "arduino.enableUSBDetection": true,
+    "arduino.disableTestingOpen": false,
+    "arduino.skipHeaderProvider": false,
+    "arduino.useArduinoCli": false,
+    "arduino.additionalUrls": [
+        "https://raw.githubusercontent.com/VSChina/azureiotdevkit_tools/master/package_azureboard_index.json",
+        "https://www.arduino.cn/package_esp8266com_index.json"
+    ],
+    "arduino.defaultBaudRate": 115200,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "arduino.disableIntelliSenseAutoGen": true
+}

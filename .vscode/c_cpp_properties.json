@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Arduino",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:/Programs/Arduino/libraries/**",
+                "D:\\Program Files (x86)\\Arduino\\libraries\\**",
+                // "C:\\Users\\tyro\\Documents\\Arduino\\libraries\\**",
+                "D:\\Program Files (x86)\\Arduino\\tools\\**",
+                "D:\\Program Files (x86)\\Arduino\\libraries\\Keyboard\\src",
+                "D:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**",
+                "D:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\avr\\include",
+                "D:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}
