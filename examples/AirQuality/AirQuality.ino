@@ -1,9 +1,9 @@
 #include <HeFengWeather.h>
 
-const char *ssid = "202";             // WiFi名称
-const char *password = "18385681735"; // WiFi密码
+const char *ssid = "";             // WiFi名称
+const char *password = ""; // WiFi密码
 
-String UserKey = "24d970de027d47659f68be1151bde653"; // 私钥 https://dev.heweather.com/docs/start/get-api-key
+String UserKey = ""; // 私钥 https://dev.heweather.com/docs/start/get-api-key
 String Location = "101010100";                       // 城市代码 https://github.com/heweather/LocationList,表中的 Location_ID
 
 AirQuality AirQuality;

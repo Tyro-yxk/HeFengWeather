@@ -1,5 +1,5 @@
-#ifndef AIRQUALITY_H
-#define AIRQUALITY_H
+#ifndef _AIRQUALITY_H_
+#define _AIRQUALITY_H_
 
 #include <Arduino.h>
 #include <ArduinoJson.h>
