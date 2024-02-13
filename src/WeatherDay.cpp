@@ -48,7 +48,6 @@ bool WeatherDay::get()
     uint8_t *outbuf = NULL;
     size_t len = 0;
     Serial.println("Get Weather" + String(this->_dayNumber) + "Day...");
-    Serial.println("get" + _url);
     bool result = HttpsGetUtils::getString(_url.c_str(), outbuf, len);
     if (outbuf && len)
     {
