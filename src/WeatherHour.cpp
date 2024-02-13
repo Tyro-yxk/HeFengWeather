@@ -87,7 +87,6 @@ void WeatherHour::_parseNowJson(char *input, size_t inputLength)
         JsonArray hourLy_json = doc["hourly"];
         for (int i = 0; i < this->_HourNumber; i++)
         {
-            Serial.println(String(i) + "-----------------------" + String(this->_HourNumber));
             JsonObject hourLy_data = hourLy_json[i];
             hourLy[i].fxTime = hourLy_data["fxTime"].as<String>();
             hourLy[i].temp = hourLy_data["temp"].as<int>();
@@ -102,7 +101,6 @@ void WeatherHour::_parseNowJson(char *input, size_t inputLength)
             hourLy[i].pop = hourLy_data["pop"].as<int>();
             hourLy[i].pressure = hourLy_data["pressure"].as<int>();
             hourLy[i].dew = hourLy_data["dew"].as<int>();
-            Serial.println(String(hourLy[i].humidity) + "-----------------------" + String(hourLy[i].humidity));
         }
     }
 }
