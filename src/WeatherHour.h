@@ -22,6 +22,12 @@ struct HourLy
     int pressure;     // 大气压强
     int dew = -99;    // 露点温度
 };
+enum Num
+{
+    hourNum1 = 24;
+    hourNum2 = 72;
+    hourNum3 = 168;
+};
 
 class WeatherHour : public ConfigUtils
 {

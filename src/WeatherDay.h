@@ -29,6 +29,14 @@ struct Daily
     int uvIndex;          // 紫外线强度指数
     float pressure = -99; // 大气压强
 };
+enum Num
+{
+    dayNum1 = 3;
+    dayNum2 = 7;
+    dayNum3 = 10;
+    dayNum4 = 15;
+    dayNum5 = 30;
+};
 
 class WeatherDay : public ConfigUtils
 {

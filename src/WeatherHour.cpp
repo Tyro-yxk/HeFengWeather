@@ -5,10 +5,28 @@ WeatherHour::WeatherHour()
     this->setUrl();
 }
 
-WeatherHour::WeatherHour(int hourSum, int dayNumber)
+WeatherHour::WeatherHour(int hourSum, int hourNumber)
 {
-    this->_HourNumber = dayNumber;
-    this->_hourSum = hourSum;
+    switch (hourSum)
+    {
+    case hourNum1:
+    case hourNum2:
+    case hourNum3:
+        if (hourSum >= hourNumber)
+        {
+            this->_HourNumber = hourNumber;
+            this->_hourSum = hourSum;
+        }
+        else
+        {
+            this->_HourNumber = hourNumber;
+            this->_hourSum = _HourNumber;
+        }
+        break;
+    default:
+        Serial.println("官方未提供获取" + String(hourSum) + "小时的天气");
+        break;
+    }
     this->setUrl();
 }
 WeatherHour::~WeatherHour()
@@ -47,11 +65,11 @@ bool WeatherHour::get()
         Serial.println("Get Weather" + String(this->_HourNumber) + "Hour failed");
     }
     // 一定要记得释放内存
-    // if (outbuf != NULL)
-    // {
-    //     free(outbuf);
-    //     outbuf = NULL;
-    // }
+    if (outbuf != NULL)
+    {
+        free(outbuf);
+        outbuf = NULL;
+    }
     return true;
 }
 

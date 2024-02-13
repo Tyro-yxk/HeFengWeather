@@ -2,17 +2,26 @@
 #include "HttpsGetUtils.h"
 WeatherDay::WeatherDay()
 {
-    // this->daily = new Daily[_dayNumber];
-    // Serial.println("url" + _url);
     this->setUrl();
-    Serial.println("无参" + _url);
 }
 
 WeatherDay::WeatherDay(int dayNumber)
 {
-    this->_dayNumber = dayNumber;
-    this->setUrl();
-    Serial.println("有参" + _url);
+    switch (dayNumber)
+    {
+    case dayNum1:
+    case dayNum2:
+    case dayNum3:
+    case dayNum4:
+    case dayNum5:
+        this->_dayNumber = dayNumber;
+        this->setUrl();
+        break;
+    default:
+        this->setUrl();
+        Serial.println("输入枚举无效，默认取值3");
+        break;
+    }
 }
 WeatherDay::~WeatherDay()
 {
