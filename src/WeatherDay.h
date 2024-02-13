@@ -28,6 +28,7 @@ struct Daily
     float precip;         // 降水量
     int uvIndex;          // 紫外线强度指数
     float pressure = -99; // 大气压强
+    int wind360Day;       // 白天风向360角度
 };
 enum dayNum
 {

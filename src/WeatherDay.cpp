@@ -102,6 +102,7 @@ void WeatherDay::_parseNowJson(char *input, size_t inputLength)
             daily[i].precip = daily_data["precip"].as<float>();
             daily[i].uvIndex = daily_data["uvIndex"].as<int>();
             daily[i].pressure = daily_data["pressure"].as<float>();
+            daily[i].wind360Day = daily_data["wind360Day"].as<int>();
         }
     }
 }
