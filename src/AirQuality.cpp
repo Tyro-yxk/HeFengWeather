@@ -55,6 +55,7 @@ void AirQuality::_parseNowJson(char *input, size_t inputLength)
         _now_aqi_int = now["aqi"].as<int>();               // 实时空气质量指数
         _now_category_str = now["category"].as<String>();  // 实时空气质量指数类别
         _now_primary_str = now["primary"].as<String>();    // 实时空气质量的主要污染物，优时返回 NA
+        _now_level_int = now["level"].as<int>();           // 空气质量指数等级
     }
 }
 
