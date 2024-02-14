@@ -53,7 +53,7 @@ void AirQuality::_parseNowJson(char *input, size_t inputLength)
         JsonObject now = doc["now"];
         _last_update_str = doc["updateTime"].as<String>(); // 当前API最近更新时间
         _now_aqi_int = now["aqi"].as<int>();               // 实时空气质量指数
-        _now_category_str = now["category"].as<String>();  // 实时空气质量指数级别
+        _now_category_str = now["category"].as<String>();  // 实时空气质量指数类别
         _now_primary_str = now["primary"].as<String>();    // 实时空气质量的主要污染物，优时返回 NA
     }
 }
@@ -86,4 +86,9 @@ String AirQuality::getCategory()
 String AirQuality::getPrimary()
 {
     return _now_primary_str;
+}
+// 空气质量指数等级
+int AirQuality::getLevel()
+{
+    return _now_level_int;
 }

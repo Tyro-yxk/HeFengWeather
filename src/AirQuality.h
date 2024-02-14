@@ -17,6 +17,7 @@ public:
     int getAqi();
     String getCategory();
     String getPrimary();
+    int getLevel();
 
 private:
     String _url;
@@ -26,6 +27,7 @@ private:
     int _now_aqi_int = 999;                              // 实时空气质量指数
     String _now_category_str = "no_init";                // 实时空气质量指数级别
     String _now_primary_str = "no_init";                 // 实时空气质量的主要污染物，优时返回 NA
+    int _now_level_int = -1;                             // 空气质量指数等级
 };
 
 #endif
