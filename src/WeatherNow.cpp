@@ -56,6 +56,7 @@ void WeatherNow::_parseNowJson(char *input, size_t inputLength)
         _now_windScale_int = now["windScale"].as<int>();   // 实况风力等级
         _now_humidity_float = now["humidity"].as<float>(); // 实况相对湿度百分比数值
         _now_precip_float = now["precip"].as<float>();     // 实况降水量,毫米
+        _now_wind360_int = now["wind360"].as<int>();       // 风向角度
     }
 }
 
@@ -116,4 +117,9 @@ float WeatherNow::getHumidity()
 float WeatherNow::getPrecip()
 {
     return _now_precip_float;
+}
+// 风向角度
+int WeatherNow::getWind360()
+{
+    return _now_wind360_int;
 }

@@ -22,9 +22,11 @@ public:
     int getWindScale();
     float getHumidity();
     float getPrecip();
+    int getWind360();
 
 private:
-    void _parseNowJson(char *input, size_t inputLength); // 解析json信息
+    void
+    _parseNowJson(char *input, size_t inputLength); // 解析json信息
     String _url;
     String _response_code = "";          // API状态码
     String _last_update_str = "";        // 当前API最近更新时间
@@ -36,6 +38,7 @@ private:
     int _now_windScale_int = 999;        // 实况风力等级
     float _now_humidity_float = 999;     // 实况相对湿度百分比数值
     float _now_precip_float = 999;       // 实况降水量,毫米
+    int _now_wind360_int;                // 风向角度
 };
 
 #endif
