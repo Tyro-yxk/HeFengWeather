@@ -20,3 +20,4 @@ HttpsGetUtils           KEYWORD1
 
 config()                KEYWORD1
 get()                   KEYWORD1
+_parseNowJson()          KEYWORD1
