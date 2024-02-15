@@ -20,7 +20,7 @@ public:
     String getWeatherText();
     String getWindDir();
     int getWindScale();
-    float getHumidity();
+    int getHumidity();
     float getPrecip();
     int getWind360();
 
@@ -36,7 +36,7 @@ private:
     String _now_text_str = "no_init";    // 实况天气状况的文字描述
     String _now_windDir_str = "no_init"; // 实况风向
     int _now_windScale_int = 999;        // 实况风力等级
-    float _now_humidity_float = 999;     // 实况相对湿度百分比数值
+    int _now_humidity_int = 999;         // 实况相对湿度百分比数值
     float _now_precip_float = 999;       // 实况降水量,毫米
     int _now_wind360_int;                // 风向角度
 };

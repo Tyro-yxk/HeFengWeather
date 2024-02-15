@@ -109,9 +109,9 @@ int WeatherNow::getWindScale()
 }
 
 // 实况相对湿度百分比数值
-float WeatherNow::getHumidity()
+int WeatherNow::getHumidity()
 {
-    return _now_humidity_float;
+    return _now_humidity_int;
 }
 // 实况降水量,毫米
 float WeatherNow::getPrecip()
