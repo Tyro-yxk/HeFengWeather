@@ -22,7 +22,7 @@ public:
     int getWindScale();
     int getHumidity();
     String getPrecip();
-    int getWind360();
+    double getWind360();
 
 private:
     void
@@ -38,7 +38,7 @@ private:
     int _now_windScale_int = 999;        // 实况风力等级
     int _now_humidity_int = 999;         // 实况相对湿度百分比数值
     String _now_precip_str = "0";        // 实况降水量,毫米
-    int _now_wind360_int;                // 风向角度
+    double _now_wind360_double;          // 风向角度
 };
 
 #endif
