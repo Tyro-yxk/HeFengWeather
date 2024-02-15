@@ -54,7 +54,7 @@ void WeatherNow::_parseNowJson(char *input, size_t inputLength)
         _now_text_str = now["text"].as<String>();          // 实况天气状况的文字描述
         _now_windDir_str = now["windDir"].as<String>();    // 实况风向
         _now_windScale_int = now["windScale"].as<int>();   // 实况风力等级
-        _now_humidity_float = now["humidity"].as<float>(); // 实况相对湿度百分比数值
+        _now_humidity_int = now["humidity"].as<int>();     // 实况相对湿度百分比数值
         _now_precip_float = now["precip"].as<float>();     // 实况降水量,毫米
         _now_wind360_int = now["wind360"].as<int>();       // 风向角度
     }
