@@ -18,4 +18,5 @@ HttpsGetUtils           KEYWORD1
 # 函数/Functions (KEYWORD2)
 #######################################
 
-
+config()                KEYWORD1
+get()                   KEYWORD1
