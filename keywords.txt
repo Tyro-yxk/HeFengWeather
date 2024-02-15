@@ -20,4 +20,3 @@ HttpsGetUtils           KEYWORD1
 
 config()                KEYWORD1
 get()                   KEYWORD1
-git branch -M master
