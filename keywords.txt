@@ -18,6 +18,13 @@ HttpsGetUtils           KEYWORD1
 # 函数/Functions (KEYWORD2)
 #######################################
 
-config()                KEYWORD1
-get()                   KEYWORD1
-_parseNowJson()         KEYWORD1
+config()                KEYWORD2
+get()                   KEYWORD2
+_parseNowJson()         KEYWORD2
+
+#######################################
+# 结构体/Struct (KEYWORD3)
+#######################################
+
+HourLy                  KEYWORD3
+Daily                   KEYWORD3
