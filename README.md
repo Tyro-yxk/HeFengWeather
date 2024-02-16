@@ -16,24 +16,24 @@ csdn -> [ESP32（Arduino)获取和风天气数据](https://blog.csdn.net/y275903
 未说清楚的配置类使用
 1. 未使用配置类获取实时天气和空气质量
    ```c++
-   AirQuality airQuality;                       //创建对象
-   airQuality.config(userKey，cityId);         	//配置对象
-   airQuality.get();						   //获取数据
+   AirQuality airQuality;              // 创建对象
+   airQuality.config(userKey, cityId); // 配置对象
+   airQuality.get();                   // 获取数据
 
-   WeatherNow weatherNow;                       //创建对象
-   airQuality.config(userKey，cityId);         	//配置对象
-   airQuality.get();						   //获取数据
+   WeatherNow weatherNow;              // 创建对象
+   airQuality.config(userKey, cityId); // 配置对象
+   airQuality.get();                   // 获取数据
    ```
    
 2. 使用配置类获取实时天气和空气质量
    ```c++
-   ConfigUtils con(userKey,cityId);          //创建配置类对象
-   
-   AirQuality airQuality;                     //创建对象
-   airQuality.get();						 //获取数据
+   ConfigUtils con(userKey, cityId); // 创建配置类对象
 
-   WeatherNow weatherNow;                     //创建对象
-   airQuality.get();						 //获取数据
+   AirQuality airQuality; // 创建对象
+   airQuality.get();      // 获取数据
+
+   WeatherNow weatherNow; // 创建对象
+   airQuality.get();      // 获取数据
    ```
    
    使用多个类时，使用配置类可以省略配置
@@ -47,7 +47,7 @@ csdn -> [ESP32（Arduino)获取和风天气数据](https://blog.csdn.net/y275903
     说明：如果创建并配置了该对象，下面的对象可以只创建不配置
    
    ```c++
-        ConfigUtils con(userKey,cityId); 		// 创建对象并配置
+      ConfigUtils con(userKey, cityId); // 创建对象并配置
    ```
 
 ### 空气质量
@@ -57,12 +57,12 @@ csdn -> [ESP32（Arduino)获取和风天气数据](https://blog.csdn.net/y275903
 2. 使用规范
 
    ```c++
-   AirQuality airQuality;  	                //创建对象
-   airQuality.config(userKey，cityId);         	//配置对象
-   airQuality.get();						   //获取数据
-   airQuality.getAqi();                         //空气质量指数
-   airQuality.getCategory();            		// 实时空气质量指数级别
-   airQuality.getPrimary()                  	// 实时空气质量的主要污染物，空气质量为优时，返回值为NA
+   AirQuality airQuality;              // 创建对象
+   airQuality.config(userKey, cityId); // 配置对象
+   airQuality.get();                   // 获取数据
+   airQuality.getAqi();                // 空气质量指数
+   airQuality.getCategory();           // 实时空气质量指数级别
+   airQuality.getPrimary()             // 实时空气质量的主要污染物，空气质量为优时，返回值为NA
    ```
 
 ### 实时天气
@@ -70,11 +70,11 @@ csdn -> [ESP32（Arduino)获取和风天气数据](https://blog.csdn.net/y275903
 1. [源码](./src/WeatherNow.h)
 2. 使用规范
    ```c++
-   WeatherNow weatherNow;
-   airQuality.config(userKey，cityId);         	//配置对象
-   airQuality.get();						   //获取数据
-   weatherNow.getTemp(); 						// 获取温度
-   weatherNow.getIcon(); 						//获取图标
+   WeatherNow weatherNow;              // 创建对象
+   airQuality.config(userKey, cityId); // 配置对象
+   airQuality.get();                   // 获取数据
+   weatherNow.getTemp();               // 获取温度
+   weatherNow.getIcon();               // 获取图标
    ```
 
 ### 多日天气
@@ -94,36 +94,36 @@ csdn -> [ESP32（Arduino)获取和风天气数据](https://blog.csdn.net/y275903
 3. 使用规范
 
    ```c++
-   WeatherDay weatherDay(7);					//有参构造，可以填入3，7...,与下一行二选一
-   WeatherDay weatherDay;						//无参构造，获取3天的天气，与上一行二选一
-   weatherDay.config(userKey，cityId);         	//配置对象
-   weatherDay.get();						   //获取数据
-   weatherDay.getDaily();                       // 获取某一日天气的，取值范围0，构造函数的取值-1，默认为1明天，返回类型如下
-   weatherDay.getDaily(0).sunrise;				// 例如获取今天的日出时间
+   WeatherDay weatherDay(7);           // 有参构造，可以填入3，7...,与下一行二选一
+   WeatherDay weatherDay;              // 无参构造，获取3天的天气，与上一行二选一
+   weatherDay.config(userKey, cityId); // 配置对象
+   weatherDay.get();                   // 获取数据
+   weatherDay.getDaily();              // 获取某一日天气的，取值范围0，构造函数的取值-1，默认为1明天，返回类型如下
+   weatherDay.getDaily(0).sunrise;     // 例如获取今天的日出时间
    ```
    ```C++
-    struct Daily
+   struct Daily
    {
-    	String fxDate;        // 预报日期
-       String sunrise;       // 日出时间
-       String sunset;        // 日落时间
-       String moonrise;      // 月升时间
-       String moonset;       // 月落时间
-       String moonPhase;     // 月相名称
-       int moonPhaseIcon;    // 月相图标
-       int tempMax;          // 最高温度
-       int tempMin;          // 最低温度
-       int iconDay;          // 白天天气状况的图标
-       String textDay;       // 白天天气状况文字描述
-       int iconNight;        // 夜间天气状况的图标
-       String textNight;     // 晚间天气状况文字描述
-       String windDirDay;    // 白天风向
-       int windScaleDay;     // 白天风力等级
-       float windSpeedDay;   // 白天风速，公里/小时
-       float humidity;       // 相对湿度，百分比数值
-       float precip;         // 降水量
-       int uvIndex;          // 紫外线强度指数
-       float pressure = -99; // 大气压强
+      String fxDate;        // 预报日期
+      String sunrise;       // 日出时间
+      String sunset;        // 日落时间
+      String moonrise;      // 月升时间
+      String moonset;       // 月落时间
+      String moonPhase;     // 月相名称
+      int moonPhaseIcon;    // 月相图标
+      int tempMax;          // 最高温度
+      int tempMin;          // 最低温度
+      int iconDay;          // 白天天气状况的图标
+      String textDay;       // 白天天气状况文字描述
+      int iconNight;        // 夜间天气状况的图标
+      String textNight;     // 晚间天气状况文字描述
+      String windDirDay;    // 白天风向
+      int windScaleDay;     // 白天风力等级
+      float windSpeedDay;   // 白天风速，公里/小时
+      float humidity;       // 相对湿度，百分比数值
+      float precip;         // 降水量
+      int uvIndex;          // 紫外线强度指数
+      float pressure = -99; // 大气压强
    };
    ```
    ### 小时天气
@@ -146,33 +146,33 @@ csdn -> [ESP32（Arduino)获取和风天气数据](https://blog.csdn.net/y275903
    
 3. 使用规范
    
-      ```C++
-      WeatherHour WeatherHour;		//无参构造，默认获取24小时天气，保存5小时;与下一行二选一
-   WeatherHour WeatherHour(hourSum,hourNumber); // hourSum获取几小时的数据，官方的24，72，168;hourNumber为保存几小时的数据，输入的值应当小于等于hourSum，否则取hourSum;当输入hourSum不是官方提供的几个数据时，将获取24小时，保存5小时数据;与上一行二选一
-   WeatherHour.config(userKey，cityId);        	//配置对象
-      WeatherHour.get();						   //获取数据
-      WeatherHour.getHourLy();					//获取未来{hourNumber}小时的天气数据，默认为0下一小时，返回如下
-      WeatherHour.getHourLy(0).temp;	 			// 获取下一小时的温度
+   ```C++
+   WeatherHour WeatherHour;                      // 无参构造，默认获取24小时天气，保存5小时;与下一行二选一
+   WeatherHour WeatherHour(hourSum, hourNumber); // hourSum获取几小时的数据，官方的24，72，168;hourNumber为保存几小时的数据，输入的值应当小于等于hourSum，否则取hourSum;当输入hourSum不是官方提供的几个数据时，将获取24小时，保存5小时数据;与上一行二选一
+   WeatherHour.config(userKey, cityId);          // 配置对象
+   WeatherHour.get();                            // 获取数据
+   WeatherHour.getHourLy();                      // 获取未来{hourNumber}小时的天气数据，默认为0下一小时，返回如下
+   WeatherHour.getHourLy(0).temp;                // 获取下一小时的温度
    ```
    
-      ```c++
-      struct HourLy
-      {
-          String fxTime;    // 预报日期
-          int temp;         // 温度
-          int icon;         // 图标
-          String text;      // 天气描述
-          float wind360;    // 风向角度
-          String windDir;   // 风向角度
-          String windScale; // 风力等级
-          int windSpeed;    // 风速
-          int humidity;     // 相对湿度，百分比数值
-          float precip;     // 当前小时累计降水
-          int pop;          // 降水概率
-          int pressure;     // 大气压强
-          int dew = -99;    // 露点温度
-      };
-      ```
+   ```c++
+   struct HourLy
+   {
+      String fxTime;    // 预报日期
+      int temp;         // 温度
+      int icon;         // 图标
+      String text;      // 天气描述
+      float wind360;    // 风向角度
+      String windDir;   // 风向角度
+      String windScale; // 风力等级
+      int windSpeed;    // 风速
+      int humidity;     // 相对湿度，百分比数值
+      float precip;     // 当前小时累计降水
+      int pop;          // 降水概率
+      int pressure;     // 大气压强
+      int dew = -99;    // 露点温度
+   };
+   ```
    
       
 
